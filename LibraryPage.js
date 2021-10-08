@@ -5,15 +5,15 @@ import * as ImagePicker from 'expo-image-picker';
 
 export default function LibraryPage({navigation}){
 
-    let openImagePickerAsync = async () => {
-        let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    const openImagePickerAsync = async () => {
+        const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
     
         if (permissionResult.granted === false) {
           alert("Permission to access camera roll is required!");
           return;
         }
     
-        let pickerResult = await ImagePicker.launchImageLibraryAsync();
+        const  pickerResult = await ImagePicker.launchImageLibraryAsync();
         console.log(pickerResult);
       }
       
